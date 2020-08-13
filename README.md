@@ -10,7 +10,7 @@ particularly integral sequences.
 
 Running
 ---------------------
-If by some miracle you manage to compile, the syntax for running the output is:
+If by some miracle you manage to install, the syntax for running the output is:
 
 ```
 $ ./deficient list size prime
