@@ -13,7 +13,7 @@ Running
 If by some miracle you manage to install, the syntax for running the output is:
 
 ```
-$ ./deficient list size prime
+$ ./deficiency_table list size prime
 ```
 * `list` is read in as `[Integer]`, but can be preceded with "r" to describe the
 terms of a recurrence relation (i.e. "r[1,1]" generates the Fibonacci numbers)
@@ -32,15 +32,15 @@ Examples
 ```
 # Generates a PNG of the deficiency table mod 2 for the Fibonacci numbers
 # output file "1 1 mod 2.png"
-$ ./deficient "r[1,1]" 512 2
+$ ./deficiency_table "r[1,1]" 512 2
 
 # Generates a 10 frame GIF of the deficiency table for the Fibonacci numbers
 # where the first frame is mod 2, the second is mod 3,...
 # output file "1 1.gif"
-$ ./deficient "r[1,1]" 512 -10
+$ ./deficiency_table "r[1,1]" 512 -10
 
 # Generates a 10 frame GIF of the product table for the Fibonacci numbers
 # where the first frame is mod 2, the second is mod 3,...
 # output file "1 1.gif"
-$ ./deficient "r[1,1]" 512 --10
+$ ./deficiency_table "r[1,1]" 512 --10
 ```
