@@ -1,4 +1,4 @@
-module Math.Render.RenderImg (pngTable, gifTable, canonical) where
+module Deficient.Render (pngTable, gifTable, canonical) where
 
 import Prelude
 import Codec.Picture
@@ -48,7 +48,7 @@ spectrumize p = round . (* (255 % p)) . fromIntegral . flip mod p
 --writes a png corresponding to the output of `ff` at the image coordinates
 --mod `p`. If `p` is zero, an alternate coloring system based on prime expansion
 --will be used
-pngTable ff p fn col  = writePng fn $ generateImage ((f .) . ff) col col
+pngTable ff p fn col  = writePng fn $ generateImage ((colorize .) . ff) col col
   where modP x        = hsv (fromIntegral (x `mod` p) * 360 / fromIntegral p) 1 1
         colorize
           | p <= 1    = rgbF8 . primeColor

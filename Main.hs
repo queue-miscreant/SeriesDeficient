@@ -1,7 +1,7 @@
 module Main where
 
 import System.Environment
-import Math.Sequence.Deficient
+import Deficient.Render
 
 import Math.GenBase.Recur (Literal(..), linseq)
 import Math.GenBase.Base (times, deficient)
@@ -14,9 +14,9 @@ main = do (list:col:p:_) <- getArgs
           let fn   = cutSeq' $ dropWhile (/='[') list
           let s    | head list == 'r' = linseq $ Literal $ read $ tail list
                    | otherwise        = read list :: [Integer]
-          let f    | take 2 p == "--" = gifTable (times s)     (read $ drop 2 p) (fn ++ ".gif") 
-                   | head p   == '-'  = gifTable (deficient s) (read $ tail p) (fn ++ ".gif") 
-                   | otherwise        = pngTable (deficient s) (read p) (fn ++ modn ++ ".png") 
-          let modn | p' > 1    = " mod " ++ p
-                   | otherwise = ""
+          let f    | take 2 p == "--" = gifTable (times s)     (read $ drop 2 p) gifFn
+                   | head p   == '-'  = gifTable (deficient s) (read $ tail p) gifFn
+                   | otherwise        = pngTable (deficient s) (read p) pngFn
+                  where pngFn = fn ++ " mod " ++ p ++ ".png"
+                        gifFn = fn ++ ".gif"
           f $ read col

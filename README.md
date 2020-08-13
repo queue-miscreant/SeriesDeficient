@@ -31,7 +31,7 @@ Examples
 
 ```
 # Generates a PNG of the deficiency table mod 2 for the Fibonacci numbers
-# output file "1 1.png"
+# output file "1 1 mod 2.png"
 $ ./deficient "r[1,1]" 512 2
 
 # Generates a 10 frame GIF of the deficiency table for the Fibonacci numbers
