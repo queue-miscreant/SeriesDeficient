@@ -13,14 +13,14 @@ Running
 If by some miracle you manage to install, the syntax for running the output is:
 
 ```
-$ ./deficiency_table list size prime
+$ ./deficiency_table list size p
 ```
 * `list` is read in as `[Integer]`, but can be preceded with "r" to describe the
 terms of a recurrence relation (i.e. "r[1,1]" generates the Fibonacci numbers)
 * `size` dictates the width/height of the output image
-* `prime` is a number. The numbers in the deficiency table modulo `prime` are those
+* `p` is a number. The numbers in the deficiency table modulo `p` are those
 used in writing to the image, in PNG format.
-If preceded with "-", then a `prime` frame GIF of the deficiency table will be produced,
+If preceded with "-", then a `p` frame GIF of the deficiency table will be produced,
 where the frame `n` is the deficiency table mod `n`.
 If preceded with "--", the GIF will use the product table rather than the deficiency table
 

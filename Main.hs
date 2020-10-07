@@ -3,8 +3,8 @@ module Main where
 import System.Environment
 import Deficient.Render
 
-import Math.GenBase.Recur (Literal(..), linseq)
-import Math.GenBase.Base (times, deficient)
+import Math.Base.Recur (Literal(..), linseq)
+import Math.Base.Base (times, deficient)
 
 cutSeq' = map (\n -> if n == ',' then ' ' else n) . init . tail
 cutSeq :: Show a => [a] -> String
